@@ -15,3 +15,14 @@ Technologies to tinker with:
 - Hibernate
 - Angular (1.5)
 - MySQL (maybe use an in memory data store or filestore)
+- Deploy to Heroku?
+
+
+References:
+- https://github.com/rayokota/generator-angular-spark
+- https://github.com/brousalis/bendystraw
+- https://github.com/bellycard/rolodex
+
+Notes:
+- Oh lawd my personal computer is so out of date (old ass brew, node, first version of Atom - this should be fun - this is time travel)
+- :heart: com.foo.bar.i.missed.java.class

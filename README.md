@@ -32,3 +32,17 @@ Notes:
 Running the project
 - I wasn't able to figure out how to run the project from the command line or with maven
 - I just imported the project into eclipse and ran the App file..
+
+```
+brew // all the things (node, npm)
+npm install -g bower
+npm install --global gulp-cli
+
+npm install
+bower install
+gulp
+```
+
+open up:
+
+`http://localhost:4567/form/trace`

@@ -1,0 +1,22 @@
+{
+  "name": "sparq",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "homepage": "https://sparq-todo-link.herokuapp.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ashtonthomas/bento-wiki-spider.git"
+  },
+  "scripts": {
+    "start": "gulp server --env development",
+    "js:lint": "eslint source/app --ext .js --cache",
+    "sass:lint": "sass-lint source/stylesheets/*.sass"
+  },
+  "devDependencies": {
+    "bendystraw": "github:brousalis/bendystraw",
+    "eslint": "^3.0.1",
+    "sass-lint": "^1.8.2"
+  }
+}

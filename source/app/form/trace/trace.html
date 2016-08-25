@@ -1,0 +1,20 @@
+<h1 class="text-center my-xx-large">The path to enlightenment!</h1>
+
+<div class="grid-lg-1-2 grid-md-2-3 grid-sm-1-1 mx-auto">
+  <form name="traceDetails">
+    <h2 class="color-black mb-0 mx-h">Path Trace to <a href="https://en.wikipedia.org/wiki/Wikipedia:Getting_to_Philosophy">Philosophy</a></h2>
+    <div class="color-gray s-foxtrot mx-h py-step border-bottom">How many hops do you think it will take?</div>
+
+    <div class="form-group mt-base">
+      <div class="grid-col grid-1-1">
+        <label class="form-label">Starting Wiki Url</label>
+        <input name="trace_url" class="form-control" required type="text" ng-model="form.trace_url" >
+      </div>
+    </div>
+
+    <div class="mx-h text-left mb-large">
+      <button class="btn btn-default btn-large" ng-click="startTrace()">Crawl!</button>
+      <figure class="loading float-left" ng-show="loading"></figure>
+    </div>
+  </form>
+</div>

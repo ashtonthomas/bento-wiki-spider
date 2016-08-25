@@ -1,0 +1,30 @@
+{
+  "name": "sparq",
+  "version": "0.0.1",
+  "homepage": "https://sparq-todo-link.herokuapp.com",
+  "authors": [
+    "AT"
+  ],
+  "description": "Crawl wiki for enlightenment",
+  "main": "source/index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.7",
+    "angular-cookies": "^1.5.7",
+    "angular-ui-router": "^0.3.1",
+    "restangular": "^1.5.2",
+    "rolodex": "brousalis/rolodex",
+    "angular-ui-mask": "^1.8.6"
+  },
+  "resolutions": {
+    "angular": "1.5.7"
+  }
+}

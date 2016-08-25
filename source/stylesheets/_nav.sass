@@ -1,0 +1,38 @@
+// Responsive nav
+
+nav
+  img
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+    @media (min-width: 460px)
+      display: inline-block
+      margin-left: $gutter-half
+      margin-right: $gutter-half
+
+  ul
+    @media (min-width: 460px)
+      text-align: center
+
+    @media (min-width: 1024px)
+      +center(x)
+      position: absolute
+      padding: $baseline-x-small 0
+      top: 0
+
+  li
+    @media (min-width: 460px)
+      display: inline-block
+      margin-right: $gutter
+
+  a
+    padding-top: $baseline-step
+    padding-bottom: $baseline-step
+    text-align: center
+
+    @media (min-width: 460px)
+      float: right
+      padding-top: $baseline-base
+      padding-bottom: $baseline-base
+

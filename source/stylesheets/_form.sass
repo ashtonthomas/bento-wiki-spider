@@ -1,0 +1,104 @@
+// FIXME: move to rolodex
+
+*
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+  -webkit-tap-highlight-color: transparent
+
+.form-group .grid-col
+  padding: 0 $gutter-half
+
+  @media (max-width: 640px)
+    margin-bottom: $baseline-step
+
+.form-control
+  padding-top: $baseline-x-small
+  padding-bottom: $baseline-x-small
+
+// .ng-touched.ng-invalid:not(.ng-pristine),
+/* uncss:ignore */
+.ng-invalid:not(.ng-pristine),
+.ng-touched.ng-invalid,
+.ng-touched.ng-invalid-card-cvc, // how stupid
+.ng-touched.ng-invalid-card-expiry, // how stupid
+  border-color: $red
+
+// because of this insane angular-payments library
+/* uncss:ignore */
+.ng-pristine .ng-invalid
+  border-color: $gray-light
+
+/* uncss:ignore */
+.form-control.form-error
+  border-color: $red
+
+/* uncss:ignore */
+.form-control:-webkit-autofill
+  -webkit-box-shadow: 0 0 0 500px $white inset
+
+// .ng-pristine.ng-invalid
+//   border-color: $gray-light
+
+// Fix iPhone zoom for inputs
+
+select,
+textarea,
+input:text,
+.form-control
+  -webkit-appearance: none
+
+@media (max-width: 768px)
+  select,
+  textarea,
+  input,
+  select:focus,
+  textarea:focus,
+  input:focus
+    font-size: 16px
+
+// FIXME: more rolodex
+
+.select
+  display: inline-block
+  position: relative
+  min-width: 75px
+  background: $white
+  border-radius: $border-radius-base
+
+  &:after
+    content: ''
+    background-image: url("/images/icons/icon-caret.png")
+    z-index: 100
+    background-size: 12px 23px
+    width: 12px
+    height: 7px
+    top: 0
+    right: 0
+    bottom: 0
+    position: absolute
+    pointer-events: none
+    right: 15px
+    top: 50%
+    transform: translateY(-50%)
+
+  select
+    padding: $baseline-x-small
+    outline: none
+    display: inline-block
+    -moz-appearance: none
+    -webkit-appearance: none
+    cursor: pointer
+    width: 100%
+    z-index: 2
+    background: transparent
+    padding-right: 35px
+
+    &:active,
+    &:focus
+      border-color: $blue
+
+/* uncss:ignore */
+.hide-spin-buttons
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0

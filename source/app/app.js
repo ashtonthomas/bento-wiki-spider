@@ -10,16 +10,17 @@
     'sparqApp.form',
   ])
   .config(routeConfig)
-  .config(urlHashConfig);
+  // .config(urlHashConfig)
+  ;
 
   function routeConfig($urlRouterProvider, $stateProvider) {
     $stateProvider.state('main', { url: '/' });
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/form/trace');
   }
 
-  function urlHashConfig($locationProvider) {
-    // Removes the hash from the URL
-    $locationProvider.html5Mode({ enabled: true, rewriteLinks: false }).hashPrefix('!');
-  }
+  // function urlHashConfig($locationProvider) {
+  //   // Removes the hash from the URL
+  //   $locationProvider.html5Mode({ enabled: true, rewriteLinks: false }).hashPrefix('!');
+  // }
 
 })();

@@ -1,5 +1,6 @@
 require('bendystraw')({
   paths: {
+    build: 'public',
     scripts: 'app'
   },
 
@@ -11,10 +12,6 @@ require('bendystraw')({
 
   browserSync: {
     open: false
-  },
-
-  images: {
-    bower: ['bower_components/rolodex/**/*']
   },
 
   deploy: {

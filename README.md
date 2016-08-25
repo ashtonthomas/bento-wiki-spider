@@ -20,9 +20,15 @@ Technologies to tinker with:
 
 References:
 - https://github.com/rayokota/generator-angular-spark
+- https://sparktutorials.github.io/2016/06/26/ajax-without-writing-javascript.html
 - https://github.com/brousalis/bendystraw
 - https://github.com/bellycard/rolodex
 
 Notes:
 - Oh lawd my personal computer is so out of date (old ass brew, node, first version of Atom - this should be fun - this is time travel)
 - :heart: com.foo.bar.i.missed.java.class
+
+
+Running the project
+- I wasn't able to figure out how to run the project from the command line or with maven
+- I just imported the project into eclipse and ran the App file..

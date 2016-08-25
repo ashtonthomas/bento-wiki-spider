@@ -18,6 +18,9 @@ angular.module('sparqApp.form.trace', [
 .controller('sparqFormTraceController', ($scope, $rootScope, $state, $q) => {
   $scope.startTrace = () => {
     let foo = traceDetails.trace_url.value
-    debugger;
+    // Maybe I should post a request to the server which will return a traceId
+    // add a view to display the trace details (in progress or completed) for the traceId
+    // This will let me play with spark a little bit more
+    // and actually start to solve the problem..
   }
 });

@@ -4,6 +4,12 @@ import static spark.Spark.*;
 
 public class App {
     public static void main(String[] args) {
-        get("/hello", (req, res) -> "Hello World");
+    	setPort(8080);
+    	externalStaticFileLocation("public");
+    	
+    	get("/", (request, response) -> {
+    		response.redirect("/index.html");
+    		return "";
+    	});
     }
 }

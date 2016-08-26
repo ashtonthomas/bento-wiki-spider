@@ -30,6 +30,7 @@
 - https://github.com/rayokota/generator-angular-spark
 - https://sparktutorials.github.io/2016/06/26/ajax-without-writing-javascript.html
 - https://blog.openshift.com/developing-single-page-web-applications-using-java-8-spark-mongodb-and-angularjs/
+- https://sparktutorials.github.io/2015/08/24/spark-heroku.html
 
 ## Notes:
 - Oh lawd my personal computer is so out of date (old ass brew, node, first version of Atom - this should be fun - this is time travel)
@@ -68,4 +69,18 @@ mvn clean package
 
 ## Deploying
 
-TODO (heroku?)
+```
+gulp build
+mvn clean package
+mvn heroku:deploy
+
+// and when things catch fire
+heroku logs --tail -a bento-wiki-spider
+```
+
+Or if you really need to get your hands dirty
+
+```
+heroku run bash -a bento-wiki-spider
+
+```

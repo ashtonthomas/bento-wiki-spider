@@ -1,8 +1,12 @@
 package sparq.resource;
 
+import java.util.ArrayList;
+
 import sparq.model.Trace;
+import sparq.model.Path;
 import sparq.service.TraceService;
 import sparq.util.JsonTransformer;
+import sparq.util.PathTracer;
 import spark.Request;
 import spark.Response;
 import spark.Route;
@@ -24,9 +28,14 @@ public class TraceResource {
 	private void setupEndpoints(){
 		post(API_CONTEXT + "/trace", "application/json", (request, response) -> {
 			Trace trace = traceService.createNewTrace(request.body());
+			
+			// Forgive my sins as this code should note be here in this class..
+			ArrayList<Path> pathList = PathTracer.tracePathList(trace.getUrl());
+			trace.setPathList(pathList);
 
+			
 			// Um, I'm sorry?
-			// Ran into too many roadblocks with setting up Hibernate - punting...
+			// Ran into too many road blocks with setting up Hibernate - punting...
 			// running out of time so will bypass DB store
 			request.session().attribute(trace.getId(), trace);
 			

@@ -6,6 +6,8 @@ import sparq.service.TraceService;
 
 public class App {
     
+	// I spent too much time wrestling with setup
+	// The organization of this project is awful
     public static void main(String[] args) {
         setPort(getHerokuAssignedPort());
         

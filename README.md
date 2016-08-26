@@ -20,6 +20,8 @@ https://bento-wiki-spider.herokuapp.com
 - Angular communication with Spark backend
 - Spark Setup
 - Heroku deployment
+- Use session for temp storage (sorry)
+
 
 ### Not Done
 - Hibernate connection with Derby (failed here: https://github.com/ashtonthomas/bento-wiki-spider/pull/1)
@@ -50,6 +52,8 @@ https://bento-wiki-spider.herokuapp.com
 - https://blog.openshift.com/developing-single-page-web-applications-using-java-8-spark-mongodb-and-angularjs/
 - https://sparktutorials.github.io/2015/08/24/spark-heroku.html
 - https://devcenter.heroku.com/articles/connecting-to-relational-databases-on-heroku-with-java
+- http://ramonaharrison.github.io/accesscode/java/http/wikipedia/2015/03/27/wikipedia-philosophy/
+- https://github.com/ramonaharrison/wikipedia-philosophy
 
 ## Notes:
 - Oh lawd my personal computer is so out of date (old ass brew, node, first version of Atom - this should be fun - this is time travel)

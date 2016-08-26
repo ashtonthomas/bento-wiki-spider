@@ -1,6 +1,6 @@
 package sparq.model;
 
-import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
@@ -9,9 +9,18 @@ public class Trace {
 	private String url;
 	private boolean done;
 	private Date createdOn = new Date();
+	private ArrayList<Path> pathList;
 	
 	public Trace(){
 		
+	}
+	
+	public void setPathList(ArrayList<Path> pathList){
+		this.pathList = pathList;
+	}
+	
+	public ArrayList<Path> getPathList(){
+		return pathList;
 	}
 	
 	public String getId() {

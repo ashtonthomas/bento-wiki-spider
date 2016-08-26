@@ -4,6 +4,7 @@ https://bento-wiki-spider.herokuapp.com
 
 *This repo sucks because I was unable to figure out how to keep the compiled folders out of git and still be able to deploy to Heroku (`public/` and `target/`)*
 
+
 ## This Repo
 
 - The angular code can be found in [/source](https://github.com/ashtonthomas/bento-wiki-spider/tree/master/source)
@@ -29,6 +30,9 @@ https://bento-wiki-spider.herokuapp.com
 - Angular trace view (in progress and complete)
 - Need a better way to develop locally and be able to edit angular code and java code without rebuilding
 - Find a way to build on deploy and not commit compiled resources on every change (this is so annoying)
+- Show loading while parsing / or show progress (but that will take more changes)
+- Why won't Heroku let Jsoup make calls? (DEBUG - TODO)
+
 
 ## This is the start of the java hack project.
 

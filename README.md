@@ -10,6 +10,20 @@ https://bento-wiki-spider.herokuapp.com
 - `gulp build` will compile front-end resources to `/public`
 - The backend spark files can be found in [src/main/java/sparq](https://github.com/ashtonthomas/bento-wiki-spider/tree/master/src/main/java/sparq)
 
+### Done
+- Node, NPM, Bower, Gulp
+- Bendystraw integration
+- Rolodex integration
+- Base Angular setup with ui-router
+- Angular communication with Spark backend
+- Spark Setup
+- Heroku deployment
+
+### Not Done
+- Hibernate connection with Derby (failed here: https://github.com/ashtonthomas/bento-wiki-spider/pull/1)
+- Wiki crawler
+- Angular trace view (in progress and complete)
+
 ## This is the start of the java hack project.
 
 - Full-stack java-based app
@@ -24,7 +38,7 @@ https://bento-wiki-spider.herokuapp.com
 - Spark
 - Hibernate
 - Angular (1.5)
-- MySQL (maybe use an in memory data store or filestore)
+- MySQL (maybe use an in memory data store or filestore) - maybe Postgres if I'm deploying to Heroku
 - Deploy to Heroku?
 
 
@@ -33,6 +47,7 @@ https://bento-wiki-spider.herokuapp.com
 - https://sparktutorials.github.io/2016/06/26/ajax-without-writing-javascript.html
 - https://blog.openshift.com/developing-single-page-web-applications-using-java-8-spark-mongodb-and-angularjs/
 - https://sparktutorials.github.io/2015/08/24/spark-heroku.html
+- https://devcenter.heroku.com/articles/connecting-to-relational-databases-on-heroku-with-java
 
 ## Notes:
 - Oh lawd my personal computer is so out of date (old ass brew, node, first version of Atom - this should be fun - this is time travel)
@@ -87,4 +102,10 @@ Or if you really need to get your hands dirty
 ```
 heroku run bash -a bento-wiki-spider
 
+```
+
+## When a dev server hangs on the port
+
+```
+kill -kill `lsof -t -i tcp:4567`
 ```

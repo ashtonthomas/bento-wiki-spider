@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Aug 26 08:45:44 CDT 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-0156-c719-610a-000006fcfd20 
+on database directory /Users/atown/git/other/bento-wiki-spider/mydb with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/Users/atown/git/other/bento-wiki-spider/target/dependency/derby-10.11.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_45-b14
+user.dir=/Users/atown/git/other/bento-wiki-spider
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.11.6
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

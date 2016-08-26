@@ -19,7 +19,7 @@ angular.module('sparqApp.startTraceService', [
     console.log(url);
 
     $http.post('/api/v1/trace', t).success(function (data) {
-        $state.go('trace');
+        $state.go("trace", { "id": data.id});
     }).error(function (data, status) {
         console.log('Error ' + data)
     })

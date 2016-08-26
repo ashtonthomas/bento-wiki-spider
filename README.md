@@ -12,8 +12,8 @@ https://bento-wiki-spider.herokuapp.com
 
 ### Done
 - Node, NPM, Bower, Gulp
-- Bendystraw integration
-- Rolodex integration
+- [brousalis/bendystraw](https://github.com/brousalis/bendystraw) integration (deployment optimizations and more)
+- [bellycard/rolodex](https://github.com/bellycard/rolodex) integration
 - Base Angular setup with ui-router
 - Angular communication with Spark backend
 - Spark Setup

@@ -1,6 +1,5 @@
 angular.module('sparqApp.form', [
-  'ui.router',
-  'sparqApp.form.trace',
+  'ui.router'
 ])
 
 .config($stateProvider =>
@@ -8,12 +7,27 @@ angular.module('sparqApp.form', [
     .state('form', {
       url: '/form',
       templateUrl: 'app/form/form.html',
-      controller: 'sparqFormController',
-      abstract: true
+      controller: 'sparqFormController'
     })
 )
 
-.controller('sparqFormController', ($rootScope, $scope, $window, $state) => {
-  // I don't need this
-  // I'm just demonstrating a useless abstract state and a parent controller
+.controller('sparqFormController', ($rootScope, $scope, $window, $state, startTraceService) => {
+  let vm = {}
+
+  vm.startTrace = () => {
+
+    let foo = traceDetails.trace_url.value;
+
+    // Maybe I should post a request to the server which will return a traceId
+    // add a view to display the trace details (in progress or completed) for the traceId
+    // This will let me play with spark a little bit more
+    // and actually start to solve the problem..
+    // Also need to deploy to Heroku
+
+    startTraceService.startTrace(foo)
+  }
+
+  vm.loading = true;
+
+  $scope.vm = vm;
 });

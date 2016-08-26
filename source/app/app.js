@@ -8,6 +8,8 @@
     'bendy.env',
 
     'sparqApp.form',
+    'sparqApp.trace',
+    'sparqApp.startTraceService'
   ])
   .config(routeConfig)
   // .config(urlHashConfig)
@@ -15,7 +17,7 @@
 
   function routeConfig($urlRouterProvider, $stateProvider) {
     $stateProvider.state('main', { url: '/' });
-    $urlRouterProvider.otherwise('/form/trace');
+    $urlRouterProvider.otherwise('/form');
   }
 
   // function urlHashConfig($locationProvider) {

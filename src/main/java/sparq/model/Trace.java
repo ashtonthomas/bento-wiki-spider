@@ -7,7 +7,7 @@ import java.util.UUID;
 public class Trace {
 	private String id = UUID.randomUUID().toString();
 	private String url;
-	private boolean done;
+	private boolean done = true; // maybe on another day I could implement this better
 	private Date createdOn = new Date();
 	private ArrayList<Path> pathList;
 	

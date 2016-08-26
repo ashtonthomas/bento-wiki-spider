@@ -1,5 +1,7 @@
 /Users/atown/git/other/bento-wiki-spider/src/main/java/sparq/model/Trace.java
 /Users/atown/git/other/bento-wiki-spider/src/main/java/sparq/util/JsonTransformer.java
 /Users/atown/git/other/bento-wiki-spider/src/main/java/sparq/service/TraceService.java
+/Users/atown/git/other/bento-wiki-spider/src/main/java/sparq/model/Path.java
 /Users/atown/git/other/bento-wiki-spider/src/main/java/sparq/resource/TraceResource.java
 /Users/atown/git/other/bento-wiki-spider/src/main/java/sparq/App.java
+/Users/atown/git/other/bento-wiki-spider/src/main/java/sparq/util/PathTracer.java

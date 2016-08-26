@@ -19,6 +19,8 @@ angular.module('sparqApp.trace', [
   traceService.find(id).then(res => {
     console.log(res);
     console.log(res.url);
+
+    vm.trace = res
   })
 
   $scope.vm = vm;

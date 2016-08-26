@@ -1,5 +1,7 @@
-sparq/model/Trace.class
 sparq/service/TraceService.class
+sparq/App.class
+sparq/util/PathTracer.class
+sparq/model/Trace.class
 sparq/resource/TraceResource.class
 sparq/util/JsonTransformer.class
-sparq/App.class
+sparq/model/Path.class

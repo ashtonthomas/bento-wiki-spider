@@ -2,12 +2,12 @@
 
 https://bento-wiki-spider.herokuapp.com
 
-*This repo sucks because I was unable to figure out how to keep the compiled folders out of git and still be able to deploy to heroku (`public/` and `target/`)*
+*This repo sucks because I was unable to figure out how to keep the compiled folders out of git and still be able to deploy to Heroku (`public/` and `target/`)*
 
 ## This Repo
 
 - The angular code can be found in [/source](https://github.com/ashtonthomas/bento-wiki-spider/tree/master/source)
-- The angular project uses [brousalis/bendystraw](https://github.com/brousalis/bendystraw) a collection of gulp tasks, configuations
+- The angular project uses [brousalis/bendystraw](https://github.com/brousalis/bendystraw) a collection of gulp tasks, configurations
 - The styling leverages [bellycard/rolodex](https://github.com/bellycard/rolodex) which is a sass library using functional css
 - `gulp build` will compile front-end resources to `/public`
 - The backend spark files can be found in [src/main/java/sparq](https://github.com/ashtonthomas/bento-wiki-spider/tree/master/src/main/java/sparq)
@@ -27,6 +27,8 @@ https://bento-wiki-spider.herokuapp.com
 - Hibernate connection with Derby (failed here: https://github.com/ashtonthomas/bento-wiki-spider/pull/1)
 - Wiki crawler
 - Angular trace view (in progress and complete)
+- Need a better way to develop locally and be able to edit angular code and java code without rebuilding
+- Find a way to build on deploy and not commit compiled resources on every change (this is so annoying)
 
 ## This is the start of the java hack project.
 

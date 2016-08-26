@@ -72,7 +72,9 @@ mvn clean package
 ```
 gulp build
 mvn clean package
-mvn heroku:deploy
+
+// I couldn't figure out how to use heroku deploy and have it build target (so will just use git and stuff target into git repo)
+git push heroku master
 
 // and when things catch fire
 heroku logs --tail -a bento-wiki-spider

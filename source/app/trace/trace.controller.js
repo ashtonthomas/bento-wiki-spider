@@ -11,10 +11,15 @@ angular.module('sparqApp.trace', [
     })
 )
 
-.controller('sparqTraceController', ($rootScope, $scope, $window, $state, startTraceService, $stateParams) => {
+.controller('sparqTraceController', ($rootScope, $scope, $window, $state, traceService, $stateParams, $http) => {
   let vm = {}
 
-  // $window.alert($stateParams.id)
+  let id = $stateParams.id
+
+  traceService.find(id).then(res => {
+    console.log(res);
+    console.log(res.url);
+  })
 
   $scope.vm = vm;
 });

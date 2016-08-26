@@ -2,6 +2,8 @@
 
 https://bento-wiki-spider.herokuapp.com
 
+*This repo sucks because I was unable to figure out how to keep the compiled folders out of git and still be able to deploy to heroku (`public/` and `target/`)*
+
 ## This Repo
 
 - The angular code can be found in [/source](https://github.com/ashtonthomas/bento-wiki-spider/tree/master/source)

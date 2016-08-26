@@ -9,7 +9,7 @@
 
     'sparqApp.form',
     'sparqApp.trace',
-    'sparqApp.startTraceService'
+    'sparqApp.traceService'
   ])
   .config(routeConfig)
   // .config(urlHashConfig)

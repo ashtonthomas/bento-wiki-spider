@@ -24,11 +24,27 @@ public class TraceResource {
 	private void setupEndpoints(){
 		post(API_CONTEXT + "/trace", "application/json", (request, response) -> {
 			Trace trace = traceService.createNewTrace(request.body());
+
+			// Um, I'm sorry?
+			// Ran into too many roadblocks with setting up Hibernate - punting...
+			// running out of time so will bypass DB store
+			request.session().attribute(trace.getId(), trace);
+			
+			
             response.status(201); // is this all doing what I expect?
                         
             return trace;
             
         }, new JsonTransformer());
+		
+		get(API_CONTEXT + "/trace/:id", "application/json", (request, response) -> {
+			String id = request.params(":id");
+			
+			Trace trace = request.session().attribute(id);
+			
+			return trace;
+			
+		}, new JsonTransformer());
 		
 	}
 

@@ -1,15 +1,16 @@
-angular.module('sparqApp.startTraceService', [
+angular.module('sparqApp.traceService', [
   'ngCookies'
 ])
 
-.factory('startTraceService', ($window, $cookies, $cacheFactory, $state, $http) => {
+.factory('traceService', ($window, $cookies, $cacheFactory, $state, $http, $q) => {
   let cache = $cacheFactory('sparqApp');
 
   return {
-    startTrace: startTrace
+    post: post,
+    find: find
   };
 
-  function startTrace(url) {
+  function post(url) {
 
     let t = {
       url: url
@@ -25,5 +26,18 @@ angular.module('sparqApp.startTraceService', [
     })
 
 
+  };
+
+  function find(id) {
+    let defer = $q.defer();
+
+    $http.get('/api/v1/trace/' + id).success(function (data) {
+      defer.resolve(data);
+    }).error(function (data, status) {
+      console.log('Error ' + data)
+      defer.reject();
+    });
+
+    return defer.promise;
   };
 });

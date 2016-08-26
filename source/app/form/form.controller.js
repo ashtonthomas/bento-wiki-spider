@@ -11,7 +11,7 @@ angular.module('sparqApp.form', [
     })
 )
 
-.controller('sparqFormController', ($rootScope, $scope, $window, $state, startTraceService) => {
+.controller('sparqFormController', ($rootScope, $scope, $window, $state, traceService) => {
   let vm = {}
 
   vm.startTrace = () => {
@@ -24,7 +24,7 @@ angular.module('sparqApp.form', [
     // and actually start to solve the problem..
     // Also need to deploy to Heroku
 
-    startTraceService.startTrace(foo)
+    traceService.post(foo)
   }
 
   vm.loading = true;

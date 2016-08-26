@@ -1,11 +1,9 @@
-/target/
 .DS_Store
 .DS_Store?
 *.DS_Store
 ehthumbs.db
 Icon?
 Thumbs.db
-target/
 bower_components
 node_modules
 env*

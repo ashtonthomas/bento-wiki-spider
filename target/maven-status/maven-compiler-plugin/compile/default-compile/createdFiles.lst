@@ -1,0 +1,5 @@
+sparq/model/Trace.class
+sparq/service/TraceService.class
+sparq/resource/TraceResource.class
+sparq/util/JsonTransformer.class
+sparq/App.class

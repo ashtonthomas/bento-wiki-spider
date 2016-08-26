@@ -23,6 +23,7 @@ References:
 - https://sparktutorials.github.io/2016/06/26/ajax-without-writing-javascript.html
 - https://github.com/brousalis/bendystraw
 - https://github.com/bellycard/rolodex
+- https://blog.openshift.com/developing-single-page-web-applications-using-java-8-spark-mongodb-and-angularjs/
 
 Notes:
 - Oh lawd my personal computer is so out of date (old ass brew, node, first version of Atom - this should be fun - this is time travel)

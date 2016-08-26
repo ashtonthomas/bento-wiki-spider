@@ -3,6 +3,7 @@ package sparq;
 import static spark.Spark.*;
 import sparq.resource.TraceResource;
 import sparq.service.TraceService;
+import sparq.util.HibernateUtil;
 
 public class App {
     
@@ -17,6 +18,21 @@ public class App {
     	});
     	
     	new TraceResource(new TraceService());
+    	
+//    	before((request, response) -> {
+//            HibernateUtil.getSession().beginTransaction();
+//        });
+//
+//        after((request, response) -> {
+//            HibernateUtil.getSession().getTransaction().commit();
+//            HibernateUtil.closeSession();
+//        });
+//
+//        exception(Exception.class, (e, request, response) -> {
+//            HibernateUtil.getSession().getTransaction().rollback();
+//            HibernateUtil.closeSession();
+//            response.status(500);
+//        });
     }
     
     static int getHerokuAssignedPort() {

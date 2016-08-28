@@ -1,7 +1,11 @@
 package sparq.util;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.management.RuntimeErrorException;
 
@@ -17,6 +21,9 @@ public class PathTracer {
 	private static final String ENLIGHTENMENT_URL = "http://en.wikipedia.org/wiki/philosophy";
 	private static final int MAX_HOPS = 30;
 	
+	// using java util - need to refresh on Java logging as this is not correct if I want to use slf4j
+	private static final Logger LOGGER = Logger.getLogger( PathTracer.class.getName() ); 
+	
 	// This file should do a lot of things
 	// be well organized
 	// have a simple interface 
@@ -29,30 +36,23 @@ public class PathTracer {
 	// (not sure I have time to implement this and my data store choices won't make this easier)
 	
 	
-	public static ArrayList<Path> tracePathList(String url){
-		ArrayList<Path> pathList = new ArrayList<Path>();
-		
-		// Not able to handle exceptions with current time constraints
-		// Would be nice to look at the exception structure and make sure
-		// it makes the most sense (as I'm sure it doens't)
-		try {
-			findPhilosophy(url, pathList);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return pathList;
+	public static ArrayList<Path> tracePathList(String url){		
+		return findPhilosophy(url, new ArrayList<Path>());
 	}
 	
-	public static ArrayList<Path> findPhilosophy(String url, ArrayList<Path> path) throws IOException{
+	public static ArrayList<Path> findPhilosophy(String url, ArrayList<Path> path) {
 		ArrayList<Path> newList = addPathToList(url, path);
 		
-		if ( isEnlightened(url) ){
+		if ( isEnlightened(url) || isError(url) ){
 			return newList;
 		} else if (path.size() >= MAX_HOPS) {
 			return addPathToList("MAX LIMIT REACHED - SORRY", newList);
 		} else {
 			String nextUrl = getFirstLink(url);
+			
+			
+			
+			spit("GO TO NEXT LINK: " + nextUrl);
 			
 			return findPhilosophy(nextUrl, newList);
 		}
@@ -62,9 +62,9 @@ public class PathTracer {
 	public static ArrayList<Path> addPathToList(String url, ArrayList<Path> pathList){
 		// This code is particularly bad as there are better ways to handle and manipulate this data...
 		
-		System.out.println("---------------");
-		System.out.println(url);
-		System.out.println();
+		spit("---------------");
+		spit(url);
+		spit("");
 		
 		Path p = new Path();
 		p.setOrder(pathList.size());
@@ -79,11 +79,39 @@ public class PathTracer {
         return url.equalsIgnoreCase(ENLIGHTENMENT_URL);
 	}
 	
-	public static String getFirstLink(String url) throws IOException{
-		Document page = fetch(url);
-		Elements links = extractContentLinks(page);
+	public static boolean isError(String url){
+		return url.startsWith("ERROR");
+	}
+	
+	public static String getFirstLink(String url) {
+		try {
+			Document page = fetch(url);
+			Elements links = extractContentLinks(page);
+			
+			return determineFirstLink(links);
+		} catch (IOException e) {
+			e.printStackTrace();
+			spit(e.getMessage());
+			
+			
+			
+			try {
+				URL foo = new URL(url);
+			} catch (MalformedURLException ec) {
+				ec.printStackTrace();
+				
+				spit("----------------");
+				spit(url);
+				spit("----------------");
+				
+				
+			}
+			
+			return "ERROR (" + url + ") " + e.getMessage();
+			
+		}
 		
-		return determineFirstLink(links);
+		
 	}
 	
 	public static Document fetch(String url) throws IOException{
@@ -100,25 +128,30 @@ public class PathTracer {
 		for (Element link : links){
 			String linkUrl = link.toString();
 			
-			if(isGoodLink(linkUrl)){
-				return buildWikiUrlFromHref(linkUrl);
+			spit("linkUrl: "+linkUrl);
+			
+			String url = buildWikiUrlFromHref(linkUrl);
+			
+			spit("url: "+url);
+			
+			if(isGoodLink(url)){
+				spit("GOOD LINK: " + url);
+				return url;
 			}
 		}
 		
 		throw new RuntimeException("No Appropriate Links Found - Would be nice to handle this exception");
 	}
 	
-	/**
-	 * /**
-	 * Referencing the edge cases for what criteria may denote a bad first link:
-	 * 
-	 * http://ramonaharrison.github.io/accesscode/java/http/wikipedia/2015/03/27/wikipedia-philosophy/
-	 * 
-	 * @param link
-	 * @return
-	 */
-	public static boolean isGoodLink(String link) {
-        return (link.contains("wiki") && !link.contains("Greek") && !link.contains("Latin") && !link.contains("wiktionary"));
+	public static boolean isGoodLink(String link) {		
+		
+		boolean isWikiUrl = link.contains("http://en.wikipedia.org/wiki/");
+		boolean isNotSpecial = !link.contains("Special:");
+		boolean isNotFile = !link.contains("File:");
+		
+		boolean isValid = isWikiUrl && isNotSpecial && isNotFile;
+		
+        return isValid;
     }
 	
 	/**
@@ -131,6 +164,10 @@ public class PathTracer {
 	 */
 	public static String buildWikiUrlFromHref(String link){
 		return "http://en.wikipedia.org" + link.substring(9, link.indexOf("\"", 10));
+	}
+	
+	private static void spit(String fire){
+		LOGGER.log(Level.INFO, fire);
 	}
 
 }

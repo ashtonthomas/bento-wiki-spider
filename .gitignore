@@ -12,3 +12,4 @@ env*
 build
 .eslintcache
 target/
+public/

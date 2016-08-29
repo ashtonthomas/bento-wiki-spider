@@ -22,6 +22,7 @@ https://bento-wiki-spider.herokuapp.com
 - Trace wiki route
 - Display hops in angular app
 - Configure heroku plugin to include static files (remove target from git repo)
+- Use heroku maven plugin to deploy (remove public and target folders from repo)
 
 
 ### Not Done
@@ -29,7 +30,7 @@ https://bento-wiki-spider.herokuapp.com
 - Need a better way to develop locally and be able to edit angular code and java code without rebuilding
 - Find a way to build on deploy and not commit compiled resources on every change (this is so annoying)
 - Show loading while parsing / or show progress (but that will take more changes)
-- Configure maven to run gulp build (remove public from git repo)
+- Configure maven to run gulp build
 
 
 ## This is the start of the java hack project.
@@ -59,7 +60,7 @@ https://bento-wiki-spider.herokuapp.com
 - http://ramonaharrison.github.io/accesscode/java/http/wikipedia/2015/03/27/wikipedia-philosophy/
 - https://github.com/ramonaharrison/wikipedia-philosophy
 
-## Running Deploying (come back to this once I finish configuring maven to `gulp build`)
+## Running Deploying
 
 ```
 brew // all the things (node, npm)
@@ -70,6 +71,8 @@ npm install
 bower install
 gulp build
 mvn heroku:deploy
+
+heroku open
 
 // and when things catch fire
 heroku logs --tail -a bento-wiki-spider

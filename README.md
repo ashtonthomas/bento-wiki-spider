@@ -68,33 +68,8 @@ npm install --global gulp-cli
 
 npm install
 bower install
-gulp
-```
-
-open up:
-
-`http://localhost:4567`
-
-
-## More Getting Started
-
-*Make sure npm, bower, gulp is running above
-
-```
 gulp build
-mvn clean package
-
-//run the App class
-```
-
-## Deploying
-
-```
-gulp build
-mvn clean package
-
-// I couldn't figure out how to use heroku deploy and have it build target (so will just use git and stuff target into git repo)
-git push heroku master
+mvn heroku:deploy
 
 // and when things catch fire
 heroku logs --tail -a bento-wiki-spider
@@ -106,6 +81,12 @@ Or if you really need to get your hands dirty
 heroku run bash -a bento-wiki-spider
 
 ```
+
+### For Angular Development
+
+
+Just run `gulp` and then open: `http://localhost:4567`
+
 
 ## When a dev server hangs on the port
 

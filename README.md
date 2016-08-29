@@ -2,6 +2,25 @@
 
 https://bento-wiki-spider.herokuapp.com
 
+## Self Evaluation
+
+### The Good
+
+- Well, it "works"
+- Used Spark framework for the first time
+- Deployment on Heroku via Maven
+- Gulp + optimizations setup (see Bendystraw)
+- Using Angular 1.5 front-end (not following all of my guidelines but it is something to look at..)
+- I'm using [Belly's style framework](https://github.com/bellycard/rolodex) (Makes it a little prettier and shows just another integration)
+
+### The Bad
+
+- Logic: Edge cases are probably not handled completely
+- Code organization could be improved
+- Data persistence is not leveraged outside of the session
+- Checks for infinite loops could be handled more appropriately
+- No checks for known nodes/paths (potential performance optimization)
+
 ## This Repo
 
 - The angular code can be found in [/source](https://github.com/ashtonthomas/bento-wiki-spider/tree/master/source)
@@ -9,6 +28,7 @@ https://bento-wiki-spider.herokuapp.com
 - The styling leverages [bellycard/rolodex](https://github.com/bellycard/rolodex) which is a sass library using functional css
 - `gulp build` will compile front-end resources to `/public`
 - The backend spark files can be found in [src/main/java/sparq](https://github.com/ashtonthomas/bento-wiki-spider/tree/master/src/main/java/sparq)
+- The meat of the logic is in [util/PathTracer](https://github.com/ashtonthomas/bento-wiki-spider/blob/master/src/main/java/sparq/util/PathTracer.java)
 
 ### Done
 - Node, NPM, Bower, Gulp
@@ -82,7 +102,6 @@ Or if you really need to get your hands dirty
 
 ```
 heroku run bash -a bento-wiki-spider
-
 ```
 
 ### For Angular Development

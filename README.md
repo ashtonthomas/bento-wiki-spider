@@ -15,11 +15,13 @@ https://bento-wiki-spider.herokuapp.com
 
 ### The Bad
 
+- Not fully complete - there are some criteria not met
 - Logic: Edge cases are probably not handled completely
 - Code organization could be improved
 - Data persistence is not leveraged outside of the session
 - Checks for infinite loops could be handled more appropriately
 - No checks for known nodes/paths (potential performance optimization)
+- No tests
 
 ## This Repo
 

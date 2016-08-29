@@ -4,7 +4,7 @@
   "engines": {
     "node": ">=0.8.0"
   },
-  "homepage": "https://sparq-todo-link.herokuapp.com",
+  "homepage": "https://bento-wiki-spider.herokuapp.com",
   "repository": {
     "type": "git",
     "url": "git://github.com/ashtonthomas/bento-wiki-spider.git"

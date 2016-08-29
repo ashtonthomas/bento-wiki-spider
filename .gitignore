@@ -13,3 +13,5 @@ build
 .eslintcache
 target/
 public/
+derby.log
+mydb

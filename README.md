@@ -2,9 +2,6 @@
 
 https://bento-wiki-spider.herokuapp.com
 
-*This repo sucks because I was unable to figure out how to keep the compiled folders out of git and still be able to deploy to Heroku (`public/` and `target/`)*
-
-
 ## This Repo
 
 - The angular code can be found in [/source](https://github.com/ashtonthomas/bento-wiki-spider/tree/master/source)
@@ -24,6 +21,7 @@ https://bento-wiki-spider.herokuapp.com
 - Use session for temp storage (sorry)
 - Trace wiki route
 - Display hops in angular app
+- Configure heroku plugin to include static files (remove target from git repo)
 
 
 ### Not Done
@@ -31,7 +29,7 @@ https://bento-wiki-spider.herokuapp.com
 - Need a better way to develop locally and be able to edit angular code and java code without rebuilding
 - Find a way to build on deploy and not commit compiled resources on every change (this is so annoying)
 - Show loading while parsing / or show progress (but that will take more changes)
-
+- Configure maven to run gulp build (remove public from git repo)
 
 
 ## This is the start of the java hack project.
@@ -61,14 +59,7 @@ https://bento-wiki-spider.herokuapp.com
 - http://ramonaharrison.github.io/accesscode/java/http/wikipedia/2015/03/27/wikipedia-philosophy/
 - https://github.com/ramonaharrison/wikipedia-philosophy
 
-## Notes:
-- Oh lawd my personal computer is so out of date (old ass brew, node, first version of Atom - this should be fun - this is time travel)
-- :heart: com.foo.bar.i.missed.java.class
-
-
-## Running Angular in Dev
-- I wasn't able to figure out how to run the project from the command line or with maven
-- I just imported the project into eclipse and ran the App file..
+## Running Deploying (come back to this once I finish configuring maven to `gulp build`)
 
 ```
 brew // all the things (node, npm)

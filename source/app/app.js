@@ -12,6 +12,7 @@
     'sparqApp.traceService'
   ])
   .config(routeConfig)
+
   // .config(urlHashConfig)
   ;
 

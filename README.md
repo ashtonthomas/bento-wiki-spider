@@ -1,4 +1,4 @@
-# Hack Project in Java
+# How many hops to Philosophy
 
 https://bento-wiki-spider.herokuapp.com
 
@@ -22,16 +22,16 @@ https://bento-wiki-spider.herokuapp.com
 - Spark Setup
 - Heroku deployment
 - Use session for temp storage (sorry)
+- Trace wiki route
+- Display hops in angular app
 
 
 ### Not Done
 - Hibernate connection with Derby (failed here: https://github.com/ashtonthomas/bento-wiki-spider/pull/1)
-- Wiki crawler
-- Angular trace view (in progress and complete)
 - Need a better way to develop locally and be able to edit angular code and java code without rebuilding
 - Find a way to build on deploy and not commit compiled resources on every change (this is so annoying)
 - Show loading while parsing / or show progress (but that will take more changes)
-- Why won't Heroku let Jsoup make calls? (DEBUG - TODO)
+
 
 
 ## This is the start of the java hack project.
@@ -46,7 +46,7 @@ https://bento-wiki-spider.herokuapp.com
 
 ## Technologies to tinker with:
 - Spark
-- Hibernate
+- Hibernate (nvm)
 - Angular (1.5)
 - MySQL (maybe use an in memory data store or filestore) - maybe Postgres if I'm deploying to Heroku
 - Deploy to Heroku?
@@ -82,7 +82,7 @@ gulp
 
 open up:
 
-`http://localhost:4567/form/trace`
+`http://localhost:4567`
 
 
 ## More Getting Started

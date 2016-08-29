@@ -15,23 +15,15 @@ angular.module('sparqApp.form', [
   let vm = {}
 
   vm.startTrace = () => {
-
+    vm.loading = true;
     let url = traceDetails.trace_url.value;
-
-    // Maybe I should post a request to the server which will return a traceId
-    // add a view to display the trace details (in progress or completed) for the traceId
-    // This will let me play with spark a little bit more
-    // and actually start to solve the problem..
-    // Also need to deploy to Heroku
-
     traceService.post(url)
   }
 
-  vm.loading = true;
+  vm.loading = false;
 
   // Let's just use the Main Page as a default starting point
   vm.trace_url = "https://en.wikipedia.org/wiki/Main_Page";
-
 
   $scope.vm = vm;
 });

@@ -1,5 +1,4 @@
 package sparq;
-
 import static spark.Spark.*;
 import sparq.resource.TraceResource;
 import sparq.service.TraceService;

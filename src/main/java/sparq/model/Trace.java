@@ -9,7 +9,7 @@ public class Trace {
 	private String url;
 	private boolean done = true; // maybe on another day I could implement this better
 	private Date createdOn = new Date();
-	private ArrayList<Path> pathList;
+	private ArrayList<Path> pathList = new ArrayList<Path>();
 	
 	public Trace(){
 		
@@ -29,6 +29,10 @@ public class Trace {
  
 	public String getUrl(){
 		return url;
+	}
+	
+	public void setUrl(String url){
+		this.url = url;
 	}
 	
     public boolean isDone() {

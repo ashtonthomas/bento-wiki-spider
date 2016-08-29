@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* sparq.App
+web: java -jar target/sparq-0.0.1-SNAPSHOT-jar-with-dependencies.jar

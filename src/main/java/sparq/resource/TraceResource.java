@@ -6,13 +6,8 @@ import sparq.model.Trace;
 import sparq.model.Path;
 import sparq.service.TraceService;
 import sparq.util.JsonTransformer;
-import sparq.util.PathTracer;
-import spark.Request;
-import spark.Response;
-import spark.Route;
 import static spark.Spark.get;
 import static spark.Spark.post;
-import static spark.Spark.put;
 
 public class TraceResource {
 	
@@ -26,11 +21,15 @@ public class TraceResource {
 	}
 	
 	private void setupEndpoints(){
+		post(API_CONTEXT + "/foo", "application/json", (request, response) -> {
+			return "foo bar";
+		}, new JsonTransformer());
+		
 		post(API_CONTEXT + "/trace", "application/json", (request, response) -> {
 			Trace trace = traceService.createNewTrace(request.body());
 			
 			// Forgive my sins as this code should note be here in this class..
-			ArrayList<Path> pathList = PathTracer.tracePathList(trace.getUrl());
+			ArrayList<Path> pathList = sparq.util.PathTracer.tracePathList(trace.getUrl());
 			trace.setPathList(pathList);
 
 			

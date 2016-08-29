@@ -18,7 +18,7 @@ import sparq.model.Path;
 
 public class PathTracer {
 	
-	private static final String ENLIGHTENMENT_URL = "http://en.wikipedia.org/wiki/philosophy";
+	private static final String ENLIGHTENMENT_URL = "://en.wikipedia.org/wiki/philosophy"; //catch http or http
 	private static final int MAX_HOPS = 30;
 	
 	// using java util - need to refresh on Java logging as this is not correct if I want to use slf4j
@@ -50,8 +50,6 @@ public class PathTracer {
 		} else {
 			String nextUrl = getFirstLink(url);
 			
-			
-			
 			spit("GO TO NEXT LINK: " + nextUrl);
 			
 			return findPhilosophy(nextUrl, newList);
@@ -76,7 +74,7 @@ public class PathTracer {
 	}
 	
 	public static boolean isEnlightened(String url){
-        return url.equalsIgnoreCase(ENLIGHTENMENT_URL);
+		return url.toLowerCase().contains(ENLIGHTENMENT_URL.toLowerCase());
 	}
 	
 	public static boolean isError(String url){
